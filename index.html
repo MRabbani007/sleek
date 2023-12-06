@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <!-- Page Title -->
+  <title>SLEEK</title>
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./styles/styles.css">
+  <link rel="icon" type="image/x-icon" href="./images/icons/icon.svg">
+  <!-- Scripts defer loads html before running js -->
+  <script src="./scripts/products.js" defer></script>
+  <script src="./scripts/utils.js" defer></script>
+  <script src="./scripts/main.js" defer></script>
+</head>
+
+<body>
+<div class="container-fluid p-0">
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-dark bg-color-gradient sticky-top d-flex flex-nowrap">
+    <!-- Button to open the offcanvas sidebar -->
+    <div class="navbar-headerd-flex d-flex flex-nowrap">
+      <button class="btn btn-dark mx-md-3 mx-sm-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
+        <img class="icons" src="./images/icons/menu.svg">
+      </button>
+      <a class="navbar-brand" href="./index.html"><img class="logo" src="./images/icons/logo.png" alt=""></a>
+    </div>
+    <!-- Search bar -->
+    <div class="navbar-header mx-lg-3 mx-sm-0">
+      <div class="navbar-nav" action="" name="search">
+        <div class="input-group row">
+          <!-- Category DropDown -->
+          <select name="category" id="cat-list" class="input-group-text form-select-sm text-start select-cat" >
+            <option value="all">All</option>
+            <option value="electronics">Electronics</option>
+            <option value="computers">Computers</option>
+            <option value="smart-home">Smart Home</option>
+            <option value="arts-&-crafts">Arts & Crafts</option>
+            <option value="automotive">Automotive</option>
+            <option value="beaty-&-personal-care">Beauty & Personal Care</option>
+            <option value="fashion">Fashion</option>
+            <option value="Health & Household">Health & Household</option>
+            <option value="Home & Kitchen">Home & Kitchen</option>
+            <option value="industrial & scientific">Industrial & Scientific</option>
+            <option value="tools & home improvement">Tools & Home Improvement</option>
+            <option value="Sports & Outdoors">Sports & Outdoors</option>
+          </select>
+          <!-- Search Input -->
+          <input type="text" id="searchBox" class="form-control searchBox" placeholder="Search">
+          <!-- Search Button -->
+          <button class="btn btn-warning nav-search-btn p-0" onclick="searchNavbar('index')">
+            <img class="icons" src="./images/icons/search.png">
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Sign in & Cart -->
+    <div class="navbar-header d-flex">
+      <div class="nav-item dropdown p-0 my-auto">
+        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">
+          <img class="icons" src="./images/icons/user-white.png">
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end rounded-0">
+            <li class=""><a class="dropdown-item" href="./views/signin.html">Sign In</a></li>
+            <li><a class="dropdown-item" href="./views/signup.html">Sign Up</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li class="">
+              <a class="dropdown-item" href="./views/orders.html">Orders & Returns</a>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Kazakhstan</a></li>
+            <li><a class="dropdown-item" href="#">Change Location</a></li>
+        </ul>
+      </div>
+      <div class="nav-item p-0 mx-md-3 mx-sm-1 my-auto">
+        <a class="nav-link" href="./views/cart.html">
+          <div class="btn position-relative  p-0 m-0 my-auto cart-container">
+            <img class="cart-icon" src="./images/icons/cart.png">
+            <span class="cart-quantity position-absolute rounded-1 bg-warning p-1 text-wrap" style="top:-10px; left:15px; right:15px">25</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Offcanvas Sidebar -->
+  <div class="offcanvas offcanvas-start" id="demo">
+    <div class="offcanvas-header text-bg-dark d-flex ">
+      <div class="offcanvas-title">
+        <a class="navbar-brand" href="./index.html"><img class="logo" src="./images/icons/logo.png" alt=""></a>
+      </div>
+      <button type="button" class="btn-close text-reset text-bg-light" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+      <!-- <img class="icons" src="./images/icons/login-black.png">
+          Hello, Sign in
+      <hr> -->
+      <h5 class="border-bottom border-light pb-2 ">Shop by Department</h5>
+      <div class="departments mb-3"></div>
+      <h5 class="border-bottom border-light pb-2">Help & Settings</h5>
+      <h6><img src="./images/flags/flag-kz.png" alt="">Kazakhstan</h6>
+      <h6>Customer Service</h6>
+      <button class="btn btn-secondary my-3" type="button" onclick="redirect('signin','index')">Sign In</button>
+      <button class="btn btn-warning my-3" type="button" onclick="redirect('signup','index')">Sign Up</button>
+    </div>
+  </div>
+
+  <div class="container-fluid d-flex flex-wrap justify-content-center bg-secondary-subtle">
+    <div class="card my-3 mx-2 p-0 width-20">
+      <div class="card-header">Today's Deals</div>
+      <div class="card-body d-flex justify-content-center p-0">
+        <img class="card-photo" src="./images/deals/deals.jpg" alt="" onclick="openCat('all')">
+      </div>
+      <div class="card-footer"><a href="#">Shop now</a></div>
+    </div>
+    <div class="card my-3 mx-2 p-0 width-20">
+      <div class="card-header">Computers</div>
+      <div class="card-body d-flex justify-content-center p-0">
+        <img class="card-photo" src="./images/deals/computers.jpg" alt="" onclick="openCat('computers')">
+      </div>
+      <div class="card-footer"><a href="#">Show More</a></div>
+    </div>
+    <div class="card my-3 mx-2 p-0 width-20">
+      <div class="card-header">Fashion</div>
+      <div class="card-body d-flex justify-content-center p-0">
+        <img class="card-photo" src="./images/deals/fashion.jpg" alt="" onclick="openCat('fashion')">
+      </div>
+      <div class="card-footer"><a href="#">Show More</a></div>
+    </div>
+    <div class="card my-3 mx-2 p-0 width-20">
+      <div class="card-header">Automotive</div>
+      <div class="card-body d-flex justify-content-center p-0">
+        <img class="card-photo" src="./images/deals/automotive.jpg" alt="" onclick="openCat('all')">
+      </div>
+      <div class="card-footer"><a href="#">Show More</a></div>
+    </div>
+    <div class="card my-3 mx-2 p-0 width-20">
+      <div class="card-header">Home & Kitchen</div>
+      <div class="card-body d-flex justify-content-center p-0">
+        <img class="card-photo" src="./images/deals/home_kitchen.jpg" alt="" onclick="openCat('Home & Kitchen')">
+      </div>
+      <div class="card-footer"><a href="#">Show More</a></div>
+    </div>
+    <div class="card my-3 mx-2 p-0 width-20">
+      <div class="card-header">Tools & Home Improvement</div>
+      <div class="card-body d-flex justify-content-center p-0">
+        <img class="card-photo" src="./images/deals/tools.jpg" alt="" onclick="openCat('all')">
+      </div>
+      <div class="card-footer"><a href="#">Show More</a></div>
+    </div>
+    <div class="card my-3 mx-2 p-0 width-20">
+      <div class="card-header">Health & Household</div>
+      <div class="card-body d-flex justify-content-center p-0">
+        <img class="card-photo" src="./images/deals/household.jpg" alt="" onclick="openCat('Health & Household')">
+      </div>
+      <div class="card-footer"><a href="#">Show More</a></div>
+    </div>
+    <div class="card my-3 mx-2 p-0 width-20">
+      <div class="card-header">Sports & Outdoors</div>
+      <div class="card-body d-flex justify-content-center p-0">
+        <img class="card-photo" src="./images/deals/sports.jpg" alt="" onclick="openCat('Sports & Outdoors')">
+      </div>
+      <div class="card-footer"><a href="#">Show More</a></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

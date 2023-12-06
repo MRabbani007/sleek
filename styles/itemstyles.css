@@ -1,0 +1,121 @@
+.img-thumbnails {
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 10px auto;
+  width: 60px;
+  display: block;
+}
+
+.img-thumbnails:hover {
+  border: 2px solid lightblue;
+}
+
+.item-container {
+  z-index: 0;
+}
+
+.img-expanded {
+  width: 100%;
+}
+
+.img-expanded:hover {
+  z-index: 1000;
+  position: relative;
+  transform: translate(200px, 50px) scale(1.5,1.5);
+}
+
+.carousel-item img {
+  width: 300px;
+  height: 300px;
+}
+
+.item-colors {
+  display: inline-block;
+  margin: 5px;
+  padding: 5px;
+  border: 1px dashed gray;
+  color: lightgray;
+}
+
+.item-colors-available {
+  display: inline-block;
+  margin: 5px;
+  padding: 5px;
+  color: black;
+  border: 1px solid black;
+  background-color: none;
+}
+
+.item-colors-available:hover {
+  border: 2px solid blue;
+}
+
+.item-styles {
+  display: inline-block;
+  margin: 5px;
+  padding: 5px;
+  color: lightgray;
+  border: 1px solid lightgray;
+}
+
+.item-styles-available {
+  color: black;
+  border: 2px solid black;
+}
+
+.item-styles-available:active {
+  border: 2px solid orange;
+}
+
+.item-styles-available:hover {
+  background-color: lightgrey;
+}
+
+.variants-thumb {
+  width: 40px;
+}
+
+.MultiCarousel { 
+  float: left; 
+  overflow: hidden; 
+  padding: 15px; 
+  width: 100%; 
+  position:relative; 
+}
+
+.MultiCarousel-inner { 
+  overflow: hidden;
+}
+
+.item { 
+  display: block;
+  transition: 1s ease all; 
+}
+
+.MultiCarousel .leftLst, .MultiCarousel .rightLst { 
+  position:absolute; 
+  top:calc(50% - 20px); 
+}
+.MultiCarousel .leftLst { 
+  left:0; 
+}
+.MultiCarousel .rightLst { 
+  right:0; 
+}
+    
+.MultiCarousel .leftLst.over, .MultiCarousel .rightLst.over { 
+  pointer-events: none; 
+  background:#ccc; 
+}
+
+.carousel-photo{
+  width: 80%;
+  height: 200px;
+}
+
+@media (max-width: 768px) {
+  .MultiCarousel-inner { 
+    overflow: scroll;
+  }
+}
