@@ -16,6 +16,7 @@
   <!-- Scripts defer loads html before running js -->
   <script src="../scripts/products.js" defer></script>
   <script src="../scripts/utils.js" defer></script>
+  <script src="../scripts/main.js" defer></script>
   <script src="../scripts/store.js" defer></script>
 </head>
 
@@ -89,7 +90,7 @@
   </nav>
 
   <!-- Offcanvas Sidebar -->
-  <div class="offcanvas offcanvas-start" id="demo">
+  <!-- <div class="offcanvas offcanvas-start" id="demo">
     <div class="offcanvas-header text-bg-dark">
       <h5 class="offcanvas-title">
           <img class="icons" src="../images/icons/user-white.png">
@@ -113,6 +114,27 @@
       <h6>Tools & Home Improvement</h6>
       <h6  class="offcanvas-link" onclick="redirect('store','','Sports & Outdoors')">Sports & Outdoors</h6>
       <button class="btn btn-secondary my-3" type="button" onclick="redirect('signin','')">SignIn</button>
+    </div>
+  </div> -->
+
+  <div class="offcanvas offcanvas-start" id="demo">
+    <div class="offcanvas-header text-bg-dark d-flex ">
+      <div class="offcanvas-title">
+        <a class="navbar-brand" href="../index.html"><img class="logo" src="../images/icons/logo.png" alt=""></a>
+      </div>
+      <button type="button" class="btn-close text-reset text-bg-light" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+      <!-- <img class="icons" src="./images/icons/login-black.png">
+          Hello, Sign in
+      <hr> -->
+      <h5 class="border-bottom border-light pb-2 ">Shop by Department</h5>
+      <div class="departments mb-3"></div>
+      <h5 class="border-bottom border-light pb-2">Help & Settings</h5>
+      <h6><img src="../images/flags/flag-kz.png" alt="">Kazakhstan</h6>
+      <h6>Customer Service</h6>
+      <button class="btn btn-secondary my-3" type="button" onclick="redirect('signin','')">Sign In</button>
+      <button class="btn btn-warning my-3" type="button" onclick="redirect('signup','')">Sign Up</button>
     </div>
   </div>
 

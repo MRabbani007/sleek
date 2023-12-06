@@ -14,6 +14,7 @@
   <!-- Scripts defer loads html before running js -->
   <script src="../scripts/products.js" defer></script>
   <script src="../scripts/utils.js" defer></script>
+  <script src="../scripts/main.js" defer></script>
   <script src="../scripts/cart.js" defer></script>
 </head>
 <body>
@@ -86,29 +87,20 @@
 
   <!-- Offcanvas Sidebar -->
   <div class="offcanvas offcanvas-start" id="demo">
-    <div class="offcanvas-header text-bg-dark">
-      <h5 class="offcanvas-title">
-          <img class="icons" src="../images/icons/user-white.png">
-          Hello, Sign in
-      </h5>
+    <div class="offcanvas-header text-bg-dark d-flex ">
+      <div class="offcanvas-title">
+        <a class="navbar-brand" href="../index.html"><img class="logo" src="../images/icons/logo.png" alt=""></a>
+      </div>
       <button type="button" class="btn-close text-reset text-bg-light" data-bs-dismiss="offcanvas"></button>
     </div>
     <div class="offcanvas-body">
-      <h6>Electronics</h6>
-      <h6 class="offcanvas-link" onclick="redirect('store','','computers')">Computers</h6>
-      <h6>Smart Home</h6>
-      <h6>Arts & Crafts</h6>
-      <hr>
-      <h6>Automotive</h6>
-      <h6>Beauty & Perrsonal Care</h6>
-      <h6 class="offcanvas-link" onclick="redirect('store','','fashion')">Fashion</h6>
-      <h6 class="offcanvas-link" onclick="redirect('store','','Health & Household')">Health & Household</h6>
-      <hr>
-      <h6 class="offcanvas-link" onclick="redirect('store','','Home & Kitchen')">Home & Kitchen</h6>
-      <h6>Industrial & Scientific</h6>
-      <h6>Tools & Home Improvement</h6>
-      <h6  class="offcanvas-link" onclick="redirect('store','','Sports & Outdoors')">Sports & Outdoors</h6>
-      <button class="btn btn-secondary my-3" type="button" onclick="redirect('signin','')">SignIn</button>
+      <h5 class="border-bottom border-light pb-2 ">Shop by Department</h5>
+      <div class="departments mb-3"></div>
+      <h5 class="border-bottom border-light pb-2">Help & Settings</h5>
+      <h6><img src="../images/flags/flag-kz.png" alt="">Kazakhstan</h6>
+      <h6>Customer Service</h6>
+      <button class="btn btn-secondary my-3" type="button" onclick="redirect('signin','')">Sign In</button>
+      <button class="btn btn-warning my-3" type="button" onclick="redirect('signup','')">Sign Up</button>
     </div>
   </div>
 

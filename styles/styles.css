@@ -150,7 +150,7 @@ a{
 }
 /* Medium 768px*/
 @media (max-width: 800px) {
-  .logo {
+  .navbar .logo {
     content: url('../images/icons/logo-small.png');
   }
 }
