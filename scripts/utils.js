@@ -155,7 +155,6 @@ function redirect(target, callingPage = "", category = "all") {
 }
 
 function genRatings(rating) {
-  console.log(rating);
   let stars = "";
   for (let i = 1; i <= 5; i++) {
     if (i === rating - 0.5) {

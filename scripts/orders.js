@@ -20,7 +20,6 @@ function loadOrder() {
   if (data) {
     myOrders = JSON.parse(data);
   }
-  console.log(myOrders);
 }
 
 function deleteOrder(orderID) {

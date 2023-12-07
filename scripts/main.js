@@ -62,11 +62,16 @@ function openCat(cat) {
 }
 
 function genOffCanvas() {
+  let callingPage = "";
+  if (pageName) {
+    console.log(pageName);
+    callingPage = pageName;
+  }
   let offcanvasHTMl = "";
   departments.forEach((dep) => {
     if (dep.type === "active") {
       offcanvasHTMl += `
-      <h6 class="offcanvas-link px-3 py-1 m-0" onclick="redirect('store','index','${dep.value}')">${dep.text}</h6>
+      <h6 class="offcanvas-link px-3 py-1 m-0" onclick="redirect('store','${callingPage}','${dep.value}')">${dep.text}</h6>
     `;
     } else if (dep.type === "disabled") {
       offcanvasHTMl += `
